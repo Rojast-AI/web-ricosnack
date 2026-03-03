@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rico Snack | Vending Corporativo Premium</title>
+    <title>Rico Snack | Vending Corporativo de Alta Gama</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --logo-orange: #FF8A00;
-            --logo-blue: #0A1F44;
-            --logo-yellow: #FFD600;
-            --bg-light: #FDFDFD;
+            --logo-blue: #0A1F44;   /* Azul Marino del contorno de tu logo */
+            --logo-orange: #FF8A00; /* Naranja vibrante de Rico Snack */
+            --logo-yellow: #FFD600; /* Amarillo energía */
+            --bg-light: #F8F9FA;
             --white: #FFFFFF;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; background-color: var(--bg-light); color: var(--logo-blue); line-height: 1.6; }
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--logo-blue); 
+            line-height: 1.6; 
+            scroll-behavior: smooth;
+        }
 
-        /* Nav Bar */
+        /* --- NAVEGACIÓN --- */
         nav {
             background: var(--white);
             padding: 15px 8%;
@@ -27,13 +33,18 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(10, 31, 68, 0.08);
+            box-shadow: 0 4px 20px rgba(10, 31, 68, 0.1);
         }
 
-        .logo-img { height: 60px; transition: transform 0.3s; }
+        .logo-img { 
+            height: 70px; /* Tamaño ideal para que luzca tu logo */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        
         .logo-img:hover { transform: scale(1.05); }
 
-        .btn-cta {
+        .btn-nav {
             background: var(--logo-orange);
             color: white;
             padding: 12px 25px;
@@ -45,50 +56,81 @@
             transition: all 0.2s;
         }
 
-        .btn-cta:hover { transform: translateY(2px); box-shadow: 0 2px 0px #C76B00; }
+        .btn-nav:hover { transform: translateY(2px); box-shadow: 0 2px 0px #C76B00; }
 
-        /* Hero */
+        /* --- HERO SECTION --- */
         .hero {
             background: radial-gradient(circle at top right, var(--logo-blue) 0%, #051024 100%);
             color: white;
             padding: 100px 8%;
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
+            min-height: 80vh;
         }
 
-        .hero-text h1 { font-family: 'Montserrat'; font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-family: 'Montserrat'; font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px; }
         .hero-text span { color: var(--logo-yellow); }
-        .hero-text p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .hero-text p { font-size: 1.3rem; opacity: 0.9; margin-bottom: 40px; font-weight: 300; }
 
-        .hero-image-container img {
-            width: 100%;
-            max-width: 450px;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+        .hero-image { flex: 1; text-align: center; }
+        .hero-image img { 
+            width: 100%; 
+            max-width: 500px; 
+            border-radius: 30px; 
+            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
         }
 
-        /* Services */
-        .services { padding: 80px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .service-card {
-            background: white;
-            padding: 40px;
-            border-radius: 25px;
-            border: 2px solid #F0F2F5;
-            text-align: center;
-            transition: 0.3s;
-        }
-        .service-card:hover { border-color: var(--logo-orange); transform: translateY(-10px); }
-        .service-card h3 { color: var(--logo-orange); margin-bottom: 15px; font-family: 'Montserrat'; }
-
-        /* Legal/Meta Section */
-        .legal { background: #F0F2F5; padding: 60px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-radius: 40px 40px 0 0; }
+        /* --- SERVICIOS --- */
+        .services { padding: 100px 8%; text-align: center; }
+        .services h2 { font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 50px; color: var(--logo-blue); }
         
-        footer { background: var(--logo-blue); color: white; padding: 30px; text-align: center; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card {
+            background: white;
+            padding: 45px;
+            border-radius: 30px;
+            border: 1px solid #eee;
+            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-        @media (max-width: 800px) {
+        .card:hover { transform: translateY(-10px); border-color: var(--logo-orange); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .card h3 { color: var(--logo-orange); margin-bottom: 20px; font-family: 'Montserrat'; font-size: 1.5rem; }
+
+        /* --- SECCIÓN LEGAL / CONTACTO --- */
+        .contact-legal {
+            background: #E9ECEF;
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .info-box h2 { font-family: 'Montserrat'; margin-bottom: 30px; }
+        .info-box p { margin-bottom: 10px; font-size: 1.1rem; }
+
+        .legal-text { font-size: 0.9rem; color: #666; line-height: 1.8; }
+        .legal-text strong { color: var(--logo-blue); }
+
+        footer { 
+            background: var(--logo-blue); 
+            color: white; 
+            padding: 40px; 
+            text-align: center; 
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 900px) {
             .hero { flex-direction: column; text-align: center; padding: 60px 5%; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .legal { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .contact-legal { grid-template-columns: 1fr; gap: 40px; }
         }
     </style>
 </head>
@@ -97,53 +139,58 @@
     <nav>
         <img src="logo.png" alt="Rico Snack Logo" class="logo-img">
         <div class="nav-links">
-            <a href="#contacto" class="btn-cta">¡Lo quiero en mi oficina!</a>
+            <a href="#contacto" class="btn-nav">Contacto</a>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-text">
-            <h1>Snacks que <span>alegran</span> el día de tu equipo</h1>
-            <p>Llevamos lo mejor de Rico Snack a tu empresa. Instalación premium, tecnología sin contacto y frescura garantizada.</p>
-            <a href="#contacto" class="btn-cta" style="background: var(--logo-yellow); color: var(--logo-blue); box-shadow: 0 4px 0px #D4B200;">Solicitar Vending Gratis</a>
+            <h1>El <span>Sabor</span> que tu Empresa Merece</h1>
+            <p>Soluciones de vending premium con tecnología sin contacto y un catálogo curado de snacks que mantienen a tu equipo motivado.</p>
+            <a href="#contacto" class="btn-nav" style="background: var(--logo-yellow); color: var(--logo-blue); box-shadow: 0 4px 0px #D4B200;">Agenda una Demostración</a>
         </div>
-        <div class="hero-image-container">
-            <img src="https://images.unsplash.com/photo-1571353273239-425c34370830?auto=format&fit=crop&w=600&q=80" alt="Vending Rico Snack" style="border-radius: 30px;">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1571353273239-425c34370830?auto=format&fit=crop&w=800&q=80" alt="Vending Rico Snack">
         </div>
     </header>
 
     <section class="services">
-        <div class="service-card">
-            <h3>Cero Inversión</h3>
-            <p>Nos encargamos de la logística, el equipo y el surtido sin costo mensual para el negocio.</p>
-        </div>
-        <div class="service-card">
-            <h3>Variedad "Rico"</h3>
-            <p>Desde botanas clásicas hasta opciones saludables, adaptamos el menú a tu equipo.</p>
-        </div>
-        <div class="service-card">
-            <h3>Pago Inteligente</h3>
-            <p>Máquinas equipadas con lectores de tarjeta y billeteras digitales de última generación.</p>
+        <h2>Beneficios Corporativos</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Instalación Gratuita</h3>
+                <p>Llevamos el equipo a tu empresa sin costos operativos iniciales. Nosotros nos encargamos del montaje.</p>
+            </div>
+            <div class="card">
+                <h3>Monitoreo 24/7</h3>
+                <p>Nuestras máquinas inteligentes nos avisan cuando falta producto para que nunca te quedes sin tu snack favorito.</p>
+            </div>
+            <div class="card">
+                <h3>Pago con Tarjeta</h3>
+                <p>Olvídate del efectivo. Aceptamos pagos con tarjeta de crédito, débito y dispositivos móviles.</p>
+            </div>
         </div>
     </section>
 
-    <section class="legal" id="contacto">
-        <div>
-            <h2 style="font-family: 'Montserrat'; margin-bottom: 20px;">Contacto Corporativo</h2>
+    <section class="contact-legal" id="contacto">
+        <div class="info-box">
+            <h2>Hablemos de negocios</h2>
             <p><strong>Ubicación:</strong> [TU CIUDAD, ESTADO]</p>
             <p><strong>Ventas:</strong> [TU TELÉFONO]</p>
             <p><strong>Email:</strong> [TU EMAIL]</p>
         </div>
-        <div>
-            <h3 style="font-family: 'Montserrat'; margin-bottom: 15px;">Privacidad y Transparencia</h3>
-            <p style="font-size: 0.85rem; color: #666;">
-                En <strong>Rico Snack</strong>, la seguridad de la información es vital. Los datos proporcionados para verificación de Meta Business y contacto comercial son tratados con estricta confidencialidad. Marca operada por [TU NOMBRE COMPLETO].
+        <div class="info-box">
+            <h3 style="font-family: 'Montserrat'; margin-bottom: 20px;">Privacidad y Cumplimiento</h3>
+            <p class="legal-text">
+                <strong>Rico Snack</strong> opera bajo los más altos estándares de servicio al cliente. Los datos recolectados mediante este sitio o vía WhatsApp tienen el único fin de gestionar cotizaciones y atención técnica personalizada. Este sitio web es parte de la validación oficial para la plataforma Meta Business. 
+                <br><br>
+                Marca operada por <strong>[TU NOMBRE COMPLETO]</strong>.
             </p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Rico Snack. Todos los derechos reservados.</p>
+        <p>&copy; 2026 RICO SNACK - VENDING SOLUTIONS. TODOS LOS DERECHOS RESERVADOS.</p>
     </footer>
 
 </body>
