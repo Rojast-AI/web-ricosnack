@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rico Snack | Vending Corporativo de Alta Gama</title>
+    <title>Rico Snack | Vending Corporativo Premium en Monterrey</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --logo-blue: #0A1F44;   /* Azul Marino del contorno de tu logo */
-            --logo-orange: #FF8A00; /* Naranja vibrante de Rico Snack */
-            --logo-yellow: #FFD600; /* Amarillo energía */
-            --bg-light: #F8F9FA;
+            --logo-blue: #0A1F44;   /* Azul Marino profundo */
+            --logo-orange: #FF8A00; /* Naranja vibrante para acentos */
+            --logo-yellow: #FFD600; /* Amarillo energía para CTAs */
+            --bg-light: #F8F9FA;    /* Fondo claro para secciones secundarias */
             --white: #FFFFFF;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Open Sans', sans-serif; 
-            background-color: var(--bg-light); 
-            color: var(--logo-blue); 
+            background-color: var(--logo-blue); /* Fondo oscuro principal */
+            color: white; 
             line-height: 1.6; 
             scroll-behavior: smooth;
         }
@@ -37,7 +37,7 @@
         }
 
         .logo-img { 
-            height: 70px; /* Tamaño ideal para que luzca tu logo */
+            height: 70px; 
             width: auto;
             transition: transform 0.3s ease;
         }
@@ -60,8 +60,6 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            background: radial-gradient(circle at top right, var(--logo-blue) 0%, #051024 100%);
-            color: white;
             padding: 100px 8%;
             display: flex;
             align-items: center;
@@ -78,13 +76,14 @@
         .hero-image img { 
             width: 100%; 
             max-width: 500px; 
-            border-radius: 30px; 
-            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+            height: auto;
+            /* No aplicamos border-radius ni sombra pesada para mantener la transparencia limpia */
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
         }
 
-        /* --- SERVICIOS --- */
-        .services { padding: 100px 8%; text-align: center; }
-        .services h2 { font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 50px; color: var(--logo-blue); }
+        /* --- SERVICIOS (Fondo Claro) --- */
+        .services { padding: 100px 8%; text-align: center; background-color: var(--bg-light); color: var(--logo-blue); }
+        .services h2 { font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 50px; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
@@ -94,16 +93,16 @@
             border-radius: 30px;
             border: 1px solid #eee;
             transition: 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            color: var(--logo-blue);
         }
 
         .card:hover { transform: translateY(-10px); border-color: var(--logo-orange); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
         .card h3 { color: var(--logo-orange); margin-bottom: 20px; font-family: 'Montserrat'; font-size: 1.5rem; }
 
-        /* --- SECCIÓN LEGAL / CONTACTO --- */
+        /* --- SECCIÓN LEGAL / CONTACTO (Fondo Gris Medio) --- */
         .contact-legal {
             background: #E9ECEF;
+            color: var(--logo-blue);
             padding: 80px 8%;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -113,12 +112,15 @@
 
         .info-box h2 { font-family: 'Montserrat'; margin-bottom: 30px; }
         .info-box p { margin-bottom: 10px; font-size: 1.1rem; }
+        .info-box a { color: var(--logo-blue); text-decoration: none; font-weight: 600; }
+        .info-box a:hover { color: var(--logo-orange); }
 
-        .legal-text { font-size: 0.9rem; color: #666; line-height: 1.8; }
+        .legal-text { font-size: 0.9rem; color: #666; line-height: 1.8; margin-top: 20px;}
         .legal-text strong { color: var(--logo-blue); }
 
+        /* --- FOOTER (Fondo Oscuro Profundo) --- */
         footer { 
-            background: var(--logo-blue); 
+            background: #051024; /* Un azul aún más oscuro para el pie */
             color: white; 
             padding: 40px; 
             text-align: center; 
@@ -137,20 +139,20 @@
 <body>
 
     <nav>
-        <img src="logo.jpeg" alt="Rico Snack Logo" class="logo-img">
+        <img src="logo.png" alt="Rico Snack Logo" class="logo-img">
         <div class="nav-links">
-            <a href="#contacto" class="btn-nav">Contacto</a>
+            <a href="https://wa.me/528114902533?text=Hola%20Rico%20Snack,%20me%20interesa%20una%20cotización%20para%20mi%20empresa." class="btn-nav" target="_blank">Contacto</a>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-text">
             <h1>El <span>Sabor</span> que tu Empresa Merece</h1>
-            <p>Soluciones de vending premium con tecnología sin contacto y un catálogo curado de snacks que mantienen a tu equipo motivado.</p>
-            <a href="#contacto" class="btn-nav" style="background: var(--logo-yellow); color: var(--logo-blue); box-shadow: 0 4px 0px #D4B200;">Agenda una Demostración</a>
+            <p>Soluciones de vending premium en Monterrey con tecnología sin contacto y un catálogo curado de snacks que mantienen a tu equipo motivado.</p>
+            <a href="https://wa.me/528114902533?text=Hola%20Rico%20Snack,%20vi%20su%20web%20y%20me%20gustaría%20agendar%20una%20demostración." class="btn-nav" style="background: var(--logo-yellow); color: var(--logo-blue); box-shadow: 0 4px 0px #D4B200;" target="_blank">Agenda una Demostración</a>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1571353273239-425c34370830?auto=format&fit=crop&w=800&q=80" alt="Vending Rico Snack">
+            <img src="https://i.imgur.com/8Qj8j3X.png" alt="Máquina Vending Rico Snack">
         </div>
     </header>
 
@@ -175,22 +177,26 @@
     <section class="contact-legal" id="contacto">
         <div class="info-box">
             <h2>Hablemos de negocios</h2>
-            <p><strong>Ubicación:</strong> [TU CIUDAD, ESTADO]</p>
-            <p><strong>Ventas:</strong> [TU TELÉFONO]</p>
-            <p><strong>Email:</strong> [TU EMAIL]</p>
+            <p><strong>Ubicación:</strong> Monterrey, Nuevo León, México</p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/528114902533" target="_blank">+52 81 1490 2533</a></p>
+            <p><strong>Email:</strong> <a href="mailto:ricosnack247@gmail.com">ricosnack247@gmail.com</a></p>
         </div>
         <div class="info-box">
-            <h3 style="font-family: 'Montserrat'; margin-bottom: 20px;">Privacidad y Cumplimiento</h3>
+            <h3 style="font-family: 'Montserrat'; margin-bottom: 10px;">Privacidad y Cumplimiento</h3>
             <p class="legal-text">
-                <strong>Rico Snack</strong> opera bajo los más altos estándares de servicio al cliente. Los datos recolectados mediante este sitio o vía WhatsApp tienen el único fin de gestionar cotizaciones y atención técnica personalizada. Este sitio web es parte de la validación oficial para la plataforma Meta Business. 
-                <br><br>
-                Marca operada por <strong>[TU NOMBRE COMPLETO]</strong>.
+                Este sitio web es propiedad de <strong>Rico Snack</strong>. Toda la información proporcionada a través de este canal es gestionada de forma confidencial. 
+            </p>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 15px; font-weight: 300; border-top: 1px solid #ddd; padding-top: 10px;">
+                Responsable Legal: [TU NOMBRE COMPLETO]
             </p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 RICO SNACK - VENDING SOLUTIONS. TODOS LOS DERECHOS RESERVADOS.</p>
+        <p>&copy; 2026 RICO SNACK - VENDING SOLUTIONS</p>
+        <p style="margin-top: 10px; opacity: 0.6; font-size: 0.8rem;">
+            Marca comercial operada legalmente por: [TU NOMBRE COMPLETO]
+        </p>
     </footer>
 
 </body>
