@@ -5,36 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rico Snack | Vending Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.min.css">
     <style>
         :root {
             --logo-blue: #0A1F44;
             --logo-orange: #FF8A00;
             --logo-yellow: #FFD600;
             --white: #FFFFFF;
+            --whatsapp-green: #25D366;
+            --facebook-blue: #1877F2;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Open Sans', sans-serif; background-color: var(--white); overflow-x: hidden; }
 
-        /* --- NAVEGACIÓN (Solo botón) --- */
+        /* --- NAVEGACIÓN (Iconos Sociales) --- */
         nav {
             padding: 20px 8%;
             display: flex;
-            justify-content: flex-end; /* Logo eliminado de aquí */
+            justify-content: flex-end; /* Alineado a la derecha */
+            gap: 15px; /* Espacio entre los círculos */
             position: absolute;
             width: 100%;
             z-index: 100;
         }
 
-        .btn-nav {
-            background: var(--logo-orange);
+        /* ESTILO BASE DE LOS CÍRCULOS SOCIALES */
+        .social-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             color: white;
-            padding: 12px 35px;
-            border-radius: 15px;
+            font-size: 1.5rem;
             text-decoration: none;
-            font-weight: 700;
-            font-family: 'Montserrat';
-            box-shadow: 0 4px 15px rgba(255, 138, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease; /* Transición suave para hover */
+        }
+
+        /* Colores específicos */
+        .social-circle.whatsapp { background-color: var(--whatsapp-green); }
+        .social-circle.facebook { background-color: var(--facebook-blue); }
+
+        /* ANIMACIÓN AL PASAR EL RATÓN (HOVER) */
+        .social-circle:hover {
+            transform: translateY(-3px) scale(1.05); /* Sube un poco y se agranda */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        /* ANIMACIÓN AL DAR CLICK (ACTIVE) */
+        .social-circle:active {
+            transform: translateY(1px) scale(0.95); /* Baja y se achica */
+            opacity: 0.8; /* Se aclara */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         /* --- HERO SECTION --- */
@@ -118,13 +143,19 @@
             .main-logo { left: 50%; transform: translateX(-50%); width: 280px; }
             .vending-machine { position: relative; top: 50px; right: 0; width: 100%; }
             .hero-text-box { margin-top: 120px; }
+            nav { justify-content: center; top: 20px; } /* Iconos centrados en móvil */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="https://wa.me/528114902533" class="btn-nav" target="_blank">Contacto</a>
+        <a href="https://wa.me/528114902533" class="social-circle whatsapp" target="_blank" title="Contáctanos por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/tu_pagina_rico_snack" class="social-circle facebook" target="_blank" title="Visítanos en Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
     </nav>
 
     <section class="hero">
