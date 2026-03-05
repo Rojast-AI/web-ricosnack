@@ -1,166 +1,34 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rico Snack | Vending Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    /* Ajustes específicos para recuperar el impacto del texto */
+    .text-side h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 4.5rem; /* Tamaño masivo recuperado */
+        font-weight: 800;
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .text-side h1 span {
+        color: #FFD600; /* Amarillo Rico Snack */
+    }
 
-    <style>
-        :root {
-            --logo-blue: #0A1F44;
-            --logo-orange: #FF8A00;
-            --logo-yellow: #FFD600;
-            --white: #FFFFFF;
-            --whatsapp-green: #25D366;
-            --facebook-blue: #1877F2;
-        }
+    .vending-img {
+        width: 850px; /* Aumentamos aún más el tamaño */
+        height: auto;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -100px;
+        z-index: 100;
+        filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; background-color: var(--white); overflow-x: hidden; }
-
-        /* --- SECCIÓN HERO --- */
-        .hero-container {
-            position: relative;
-            margin-top: 150px; /* Espacio para que el logo gigante respire */
-            padding-bottom: 100px;
-        }
-
-        .blue-stripe {
-            background: var(--logo-blue);
-            padding: 50px 8% 70px 8%; /* Franja más delgada */
-            display: flex;
-            align-items: center;
-            position: relative;
-            min-height: 380px;
-        }
-
-        .hero-content { flex: 1.1; z-index: 10; position: relative; }
-
-        /* LOGO GIGANTE (Rompe hacia arriba y abajo) */
-        .main-logo {
-            width: 480px; /* Tamaño masivo como el ejemplo */
-            height: auto;
-            position: absolute;
-            top: -190px; 
-            left: -10px;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
-        }
-
-        .hero-text-box { margin-top: 110px; }
-        .hero h1 { font-family: 'Montserrat'; font-size: 4.2rem; color: white; line-height: 1; margin-bottom: 20px; }
-        .hero h1 span { color: var(--logo-yellow); }
-        .hero p { color: white; font-size: 1.3rem; opacity: 0.9; margin-bottom: 40px; max-width: 580px; }
-
-        /* MÁQUINA GIGANTE (Rompe hacia arriba y abajo) */
-        .hero-image { flex: 0.9; position: relative; }
-        
-        .vending-machine {
-            width: 750px; /* Tamaño extra grande */
-            height: auto;
-            position: absolute;
-            top: -240px; /* Super salida hacia arriba */
-            right: -100px; /* Super salida hacia la derecha */
-            z-index: 20;
-            filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6));
-        }
-
-        .btn-main {
-            display: inline-block;
-            background: var(--logo-yellow);
-            color: var(--logo-blue);
-            padding: 20px 45px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 800;
-            font-family: 'Montserrat';
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        /* --- BOTONES SOCIALES DEBAJO DE LA FRANJA --- */
-        .social-container {
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-            padding: 30px 8%;
-            position: relative;
-            z-index: 30;
-        }
-
-        .social-circle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            color: white;
-            font-size: 2rem;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .social-circle.whatsapp { background-color: var(--whatsapp-green); }
-        .social-circle.facebook { background-color: var(--facebook-blue); }
-
-        .social-circle:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .social-circle:active { transform: scale(0.9); opacity: 0.7; }
-
-        /* --- FOOTER --- */
-        .legal-footer { 
-            padding: 40px 8%; 
-            color: #aaa; 
-            text-align: center; 
-            font-size: 0.8rem; 
-            border-top: 1px solid #eee;
-        }
-
-        /* Responsive Móvil */
-        @media (max-width: 1024px) {
-            .blue-stripe { flex-direction: column; text-align: center; padding-bottom: 400px; margin-top: 100px; }
-            .main-logo { left: 50%; transform: translateX(-50%); width: 350px; top: -150px; }
-            .vending-machine { position: relative; top: 120px; right: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; }
-            .hero h1 { font-size: 3rem; }
-            .social-container { justify-content: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <section class="hero-container">
-        <div class="blue-stripe">
-            <div class="hero-content">
-                <img src="logo.png" alt="Rico Snack Logo" class="main-logo">
-                
-                <div class="hero-text-box">
-                    <h1 class="hero">El <span>Sabor</span> que tu Empresa Merece</h1>
-                    <p>Soluciones de vending premium en Monterrey con tecnología sin contacto y un catálogo curado de snacks.</p>
-                    <a href="https://wa.me/528114902533" class="btn-main" target="_blank">Agenda una Demostración</a>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <img src="vending.png" alt="Máquina Vending Rico Snack" class="vending-machine">
-            </div>
-        </div>
-
-        <div class="social-container">
-            <a href="https://wa.me/528114902533" class="social-circle whatsapp" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61587850499282" class="social-circle facebook" target="_blank">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-        </div>
-    </section>
-
-    <footer class="legal-footer">
-        <p>&copy; 2026 RICO SNACK - VENDING SOLUTIONS</p>
-        <p style="margin-top:10px;">Operado legalmente por: [TU NOMBRE COMPLETO]</p>
-    </footer>
-
-</body>
-</html>
+    .blue-band {
+        height: 400px; /* Franja más estilizada */
+        display: flex;
+        align-items: center;
+        padding: 0 10%;
+    }
+</style>
