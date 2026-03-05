@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rico Snack | Vending Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         :root {
             --logo-blue: #0A1F44;
@@ -19,142 +21,119 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Open Sans', sans-serif; background-color: var(--white); overflow-x: hidden; }
 
-        /* --- NAVEGACIÓN (Iconos Sociales) --- */
+        /* --- NAVEGACIÓN (Iconos) --- */
         nav {
-            padding: 20px 8%;
+            padding: 25px 8%;
             display: flex;
-            justify-content: flex-end; /* Alineado a la derecha */
-            gap: 15px; /* Espacio entre los círculos */
+            justify-content: flex-end;
+            gap: 20px;
             position: absolute;
             width: 100%;
             z-index: 100;
         }
 
-        /* ESTILO BASE DE LOS CÍRCULOS SOCIALES */
         .social-circle {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease; /* Transición suave para hover */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Colores específicos */
         .social-circle.whatsapp { background-color: var(--whatsapp-green); }
         .social-circle.facebook { background-color: var(--facebook-blue); }
 
-        /* ANIMACIÓN AL PASAR EL RATÓN (HOVER) */
-        .social-circle:hover {
-            transform: translateY(-3px) scale(1.05); /* Sube un poco y se agranda */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        }
-
-        /* ANIMACIÓN AL DAR CLICK (ACTIVE) */
-        .social-circle:active {
-            transform: translateY(1px) scale(0.95); /* Baja y se achica */
-            opacity: 0.8; /* Se aclara */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+        .social-circle:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+        .social-circle:active { transform: scale(0.9); opacity: 0.7; }
 
         /* --- HERO SECTION --- */
         .hero {
             background: var(--logo-blue);
-            margin-top: 80px; /* Espacio para que el logo sobresalga hacia arriba */
-            padding: 60px 8% 100px 8%;
+            margin-top: 120px; /* Más espacio para el logo gigante */
+            padding: 80px 8% 120px 8%;
             display: flex;
             align-items: center;
             position: relative;
-            min-height: 500px;
+            min-height: 550px;
         }
 
-        .hero-content { 
-            flex: 1.2; 
-            z-index: 10; 
-            position: relative;
-        }
+        .hero-content { flex: 1; z-index: 10; position: relative; }
 
-        /* LOGO GRANDE SOBRESALIENDO */
+        /* LOGO GIGANTE SOBRESALIENDO */
         .main-logo {
-            width: 350px; /* Tamaño grande */
+            width: 420px; /* Aumentado de 350px */
             height: auto;
             position: absolute;
-            top: -140px; /* Lo saca de la franja azul hacia arriba */
-            left: 0;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+            top: -180px; /* Más afuera */
+            left: -20px;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
         }
 
-        .hero-text-box { margin-top: 100px; } /* Espacio para no chocar con el logo */
-
-        .hero h1 { 
-            font-family: 'Montserrat'; 
-            font-size: 3.5rem; 
-            color: white; 
-            line-height: 1.1; 
-            margin-bottom: 20px; 
-        }
+        .hero-text-box { margin-top: 120px; }
+        .hero h1 { font-family: 'Montserrat'; font-size: 4rem; color: white; line-height: 1.1; margin-bottom: 25px; }
         .hero h1 span { color: var(--logo-yellow); }
-        .hero p { color: white; font-size: 1.2rem; opacity: 0.9; margin-bottom: 35px; max-width: 500px; }
+        .hero p { color: white; font-size: 1.3rem; opacity: 0.9; margin-bottom: 45px; max-width: 550px; }
 
-        /* MÁQUINA SOBRESALIENDO */
-        .hero-image { 
-            flex: 0.8; 
-            position: relative; 
-            z-index: 20; 
-        }
+        /* MÁQUINA GIGANTE SOBRESALIENDO */
+        .hero-image { flex: 1; position: relative; height: 100%; }
+        
         .vending-machine {
-            width: 130%; /* Tamaño mucho más grande */
-            max-width: 650px;
+            width: 680px; /* Tamaño masivo para que destaque */
+            height: auto;
             position: absolute;
-            top: -100px; /* Sobresale hacia arriba */
-            right: -50px; /* Sobresale hacia la derecha */
-            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.4));
+            top: -180px; /* La saca de la caja azul hacia arriba */
+            right: -80px; /* La saca hacia la derecha */
+            z-index: 20;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5));
         }
 
         .btn-main {
             display: inline-block;
             background: var(--logo-yellow);
             color: var(--logo-blue);
-            padding: 18px 30px;
-            border-radius: 15px;
+            padding: 20px 40px;
+            border-radius: 18px;
             text-decoration: none;
             font-weight: 800;
             font-family: 'Montserrat';
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 25px rgba(255, 214, 0, 0.3);
             transition: 0.3s;
         }
+        
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 214, 0, 0.4); }
 
-        /* --- FOOTER DISCRETO --- */
-        .legal-footer {
-            padding: 40px 8%;
-            background: var(--white);
-            color: #666;
-            text-align: center;
-            font-size: 0.8rem;
+        .legal-footer { padding: 60px 8%; background: var(--white); color: #888; text-align: center; font-size: 0.85rem; }
+
+        /* Ajustes para Pantallas Medianas y Móviles */
+        @media (max-width: 1200px) {
+            .vending-machine { width: 500px; right: -40px; }
+            .hero h1 { font-size: 3rem; }
         }
 
         @media (max-width: 1024px) {
-            .hero { flex-direction: column; text-align: center; margin-top: 150px; padding-bottom: 300px; }
-            .main-logo { left: 50%; transform: translateX(-50%); width: 280px; }
-            .vending-machine { position: relative; top: 50px; right: 0; width: 100%; }
-            .hero-text-box { margin-top: 120px; }
-            nav { justify-content: center; top: 20px; } /* Iconos centrados en móvil */
+            .hero { flex-direction: column; text-align: center; margin-top: 180px; padding-bottom: 450px; }
+            .main-logo { left: 50%; transform: translateX(-50%); width: 320px; top: -160px; }
+            .vending-machine { position: absolute; top: 150px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 450px; }
+            .hero-text-box { margin-top: 100px; }
+            nav { justify-content: center; top: 20px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="https://wa.me/528114902533" class="social-circle whatsapp" target="_blank" title="Contáctanos por WhatsApp">
-            <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/528114902533" class="social-circle whatsapp" target="_blank" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="https://www.facebook.com/tu_pagina_rico_snack" class="social-circle facebook" target="_blank" title="Visítanos en Facebook">
-            <i class="fab fa-facebook-f"></i>
+        <a href="https://www.facebook.com/profile.php?id=61587850499282" class="social-circle facebook" target="_blank" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
         </a>
     </nav>
 
@@ -164,7 +143,7 @@
             
             <div class="hero-text-box">
                 <h1>El <span>Sabor</span> que tu Empresa Merece</h1>
-                <p>Soluciones de vending premium en Monterrey con tecnología sin contacto y un catálogo curado de snacks.</p>
+                <p>Soluciones de vending premium en Monterrey con tecnología sin contacto y un catálogo curado de snacks que mantienen a tu equipo motivado.</p>
                 <a href="https://wa.me/528114902533" class="btn-main" target="_blank">Agenda una Demostración</a>
             </div>
         </div>
@@ -176,7 +155,7 @@
 
     <footer class="legal-footer">
         <p>&copy; 2026 RICO SNACK - VENDING SOLUTIONS</p>
-        <p style="margin-top:10px; opacity:0.6;">Operado legalmente por: [TU NOMBRE COMPLETO]</p>
+        <p style="margin-top:15px; opacity:0.7;">Operado legalmente por: [TU NOMBRE COMPLETO]</p>
     </footer>
 
 </body>
