@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Rico Snack - Vending Premium</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Montserrat font -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
     rel="stylesheet"
@@ -36,7 +35,6 @@
       text-decoration: none;
     }
 
-    /* ===== NAVBAR ===== */
     .page-wrap {
       min-height: 100vh;
       display: flex;
@@ -60,20 +58,10 @@
       gap: 12px;
     }
 
-    .logo-badge {
-      background: var(--orange);
-      color: var(--text-light);
-      font-weight: 800;
-      font-size: 1.1rem;
-      padding: 8px 16px;
-      border-radius: 999px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    }
-
-    .logo-text {
-      font-weight: 800;
-      font-size: 1.4rem;
-      color: var(--blue-darker);
+    .logo-image {
+      height: 52px;
+      width: auto;
+      display: block;
     }
 
     .btn-contact {
@@ -95,7 +83,6 @@
       box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
     }
 
-    /* ===== HERO BAND ===== */
     .hero {
       flex: 1;
       display: flex;
@@ -118,7 +105,6 @@
       isolation: isolate;
     }
 
-    /* Left text column */
     .text-side {
       max-width: 540px;
       position: relative;
@@ -197,7 +183,6 @@
       max-width: 12rem;
     }
 
-    /* Right image column */
     .vending-wrapper {
       flex: 1;
       position: relative;
@@ -228,7 +213,6 @@
       z-index: 0;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 1100px) {
       .blue-band {
         padding: 50px 40px;
@@ -287,8 +271,8 @@
       .navbar {
         padding: 0 14px;
       }
-      .logo-text {
-        font-size: 1.1rem;
+      .logo-image {
+        height: 42px;
       }
       .btn-contact {
         padding: 8px 16px;
@@ -299,15 +283,13 @@
 </head>
 <body>
   <div class="page-wrap">
-    <!-- Top bar -->
     <header class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Rico Snack logo" class="logo-image" />
-        </div>
+      <div class="logo">
+        <img src="logo.png" alt="Rico Snack logo" class="logo-image" />
+      </div>
       <button class="btn-contact">Contacto</button>
     </header>
 
-    <!-- Hero band -->
     <main class="hero">
       <section class="blue-band">
         <div class="text-side">
@@ -339,7 +321,7 @@
             class="vending-img"
             src="vending.png"
             alt="Máquina de snacks Rico Snack"
-            />
+          />
         </div>
       </section>
     </main>
